@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class MainController {
 
 	@RequestMapping("/main")
-	public ModelAndView home(@RequestParam String name) {
+	public ModelAndView home() {
 		
 		ModelAndView mav = new ModelAndView();
 		

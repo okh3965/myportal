@@ -6,7 +6,10 @@
   <packaging>war</packaging>
   <properties>
     <org.springframework-version>4.3.30.RELEASE</org.springframework-version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
+  
   <build>
     <plugins>
       <plugin>

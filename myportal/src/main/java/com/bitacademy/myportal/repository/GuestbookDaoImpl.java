@@ -21,13 +21,9 @@ public class GuestbookDaoImpl implements GuestbookDao {
 	
 	@Override
 	public List<GuestbookVo> selectAll() {
-//		가상 데이터
-//		실제 DB와 연결 필요
-		List<GuestbookVo> list = new ArrayList<>();
-		list.add(new GuestbookVo(1L, "hong", "1234", "hello", new Date()));
-		list.add(new GuestbookVo(2L, "jang", "pass", "me too", new Date()));
-		list.add(new GuestbookVo(3L, "jeon", "test", "hihi", new Date()));
-		
+		// TODO: 예외 전환 처리
+		List<GuestbookVo> list = sqlSession.selectList("guestbook.selectAll");
+		System.out.println("방명록:" + list);
 		return list;
 	}
 

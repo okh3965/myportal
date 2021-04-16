@@ -30,14 +30,16 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public MemberVo selectUser(String email, String password) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
+	// 이메일 중복 처리
 	@Override
 	public MemberVo selectUser(String email) {
-		// TODO Auto-generated method stub
-		return null;
+		MemberVo vo = sqlSession.selectOne("members.selectUserByEmail", email);
+		
+		return vo;
 	}
 
 }

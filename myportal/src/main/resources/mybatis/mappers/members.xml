@@ -9,7 +9,7 @@
 	INSERT INTO members(
 		no, name, email, password, gender)
 	VALUES(
-		seq_member_pk.nextval,
+		seq_members_pk.nextval,
 		#{name},
 		#{email},
 		#{password},

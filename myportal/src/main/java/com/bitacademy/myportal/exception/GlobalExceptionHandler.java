@@ -25,6 +25,24 @@ public class GlobalExceptionHandler {
 		mav.setViewName("error/exception");
 		
 		return mav;
-		
 	}
+	
+	// MemberDao 예외 처리 핸들러
+	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+	@ExceptionHandler(MemberDaoException.class)
+	public ModelAndView handleMemberDaoException(MemberDaoException e) {
+		// log
+		System.err.println("MemberDaoException:" + e.getMessage());
+		e.printStackTrace();
+		// 예외 상황 정보
+		System.out.println("MemberVo:" + e.getMemberVo());
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("name", e.getClass().getSimpleName());
+		mav.addObject("message", e.getMessage());
+		mav.setViewName("error/exception");
+		
+		return mav;
+	}
+	
 }

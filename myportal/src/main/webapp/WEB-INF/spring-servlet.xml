@@ -53,14 +53,23 @@
 	<!-- Interceptors -->
 	<mvc:interceptors>
 		<!-- 순서대로 적용된다. -->
-		<mvc:interceptor>
-			<!-- /board 하위 모든 url에 인터셉터를 실행 -->
+		 
+		<!-- mvc:interceptor -->
+			<!-- /board 하위 모든 url에 인터셉터를 실행 >
 			<mvc:mapping path="/board/**" />
-			<bean class="com.bitacademy.myportal.interceptors.MyInterceptor" />
-		</mvc:interceptor>
-		<mvc:interceptor>
+			<bean class="com.bitacademy.myportal.interceptors.MyInterceptor" /-->
+		<!--  /mvc:interceptor -->
+		<!--mvc:interceptor>
 			<mvc:mapping path="/board/**"/>
 			<bean class="com.bitacademy.myportal.interceptors.MyInterceptor2" />
+		</mvc:interceptor -->
+		
+		<mvc:interceptor>
+			<mvc:mapping path="/board/**" />
+			<mvc:exclude-mapping path="/board/list/**" />
+			<mvc:exclude-mapping path="/board/" />
+			<mvc:exclude-mapping path="/board" />
+			<bean class="com.bitacademy.myportal.interceptors.AuthInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
 		

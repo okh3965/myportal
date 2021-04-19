@@ -15,7 +15,7 @@ import com.bitacademy.myportal.vo.MemberVo;
 @Repository("memberDao")
 public class MemberDaoImpl implements MemberDao {
 //	로거 설정
-	private static Logger logger = LoggerFactory.getLogger(GuestbookDaoImpl.class);
+	private static Logger logger = LoggerFactory.getLogger(MemberDaoImpl.class);
 	@Autowired
 	private SqlSession sqlSession;
 	
